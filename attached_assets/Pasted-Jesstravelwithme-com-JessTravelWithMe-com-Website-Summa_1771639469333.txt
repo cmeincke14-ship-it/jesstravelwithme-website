@@ -1,0 +1,169 @@
+Jesstravelwithme.com		
+
+
+JessTravelWithMe.com - Website Summary
+Purpose
+Personal travel agent website for Jess, emphasizing her as the sole dedicated agent who provides personalized, stress-free travel planning services. The site showcases destinations, builds trust through testimonials, and drives conversions through strategic CTAs.
+
+Design Philosophy
+* Mobile-First: Optimized for smartphone users
+* Personal Touch: Single-agent focus, not a corporate travel agency
+* Clean & Sophisticated: Professional but approachable
+* Conversion-Focused: Clear paths to contact and engagement
+
+Color Palette
+* Primary: #365b6d (Deep Teal) - Main brand color, headers, navigation
+* Secondary: #f2f1ec (Warm Cream) - Backgrounds, contrast sections
+* Accent: #d4a574 (Warm Gold) - CTAs, highlights, hover states
+* Supporting: Whites and darker shades for text contrast
+
+Page Structure
+1. HOME PAGE (Primary Landing)
+Header (Fixed)
+* Logo: “Jess Travel With Me” clickable to home. Nice text and legible. Not fancy cursive
+* Hamburger menu (mobile-friendly)
+* Sticky navigation always accessible
+Hero Section
+* Layout: Full-width banner with gradient background
+* Elements:
+    * Large headline: “Jess Travel With Me” Nice text and legible. Not fancy cursive
+    * Pill/button to “Plan Your Adventure”
+    * Contact icons, Phone, email, DM on social/Instagram
+    * Benefit checklist with checkmarks:
+        * Complimentary Service
+        * Stress-Free Planning
+        * Personalized Itinerary
+* About Me section
+    * Circular profile photo (200px mobile, 250px+ desktop) - currently placeholder
+    * Personal bio paragraph introducing Jess
+Destinations Section
+* Headline: “Where is your next adventure?”
+* Layout: Responsive grid of pill-shaped buttons. Can be staggered
+1. Italy
+2. Ireland
+3. France
+4. Portugal
+5. Germany
+6. Iceland
+7. Mexico
+8. Disney
+9. All Inclusive
+10. Luxury Cruise
+* Interaction: Each pill navigates to dedicated destination page
+* Design: Rounded pills with hover animations, shadow effects
+Testimonials Section
+* Layout: Rotating carousel with 3-5 testimonials
+* Elements:
+    * Quote text (italic)
+    * Customer name/attribution
+    * Dot navigation below
+    * Auto-rotates every 5 seconds
+* Purpose: Build trust and credibility
+Social Media Section
+* Headline: “Follow my Journey”
+* Layout: Horizontal scrolling carousel
+* Content: Placeholder for Instagram posts/photos
+* Design: Cards with rounded corners, smooth scrolling
+
+2. DESTINATION PAGES (10 Individual Pages)
+Each destination follows identical structure:
+Elements:
+1. Hero Image Section: Large banner with destination name/flag
+2. Back Button: Returns to home page
+3. Content Area:
+* Destination description paragraph (currently placeholder text)
+* “Plan Your Adventure” CTA button - Should link to Plan your adventure page with travel joy embed - see below
+* Testimonial box specific to that destination
+1. Footer: Consistent across all pages
+Current Destinations:
+* Europe: Italy, Ireland, France, Portugal, Germany, Iceland
+* Americas: Mexico, Disney (Florida/California)
+* Vacation Types: All Inclusive Resorts, Luxury Cruises
+
+3. ABOUT ME PAGE
+* Personal story about Jess
+* Travel philosophy
+* Experience and credentials
+* Why choose a personal travel agent
+
+4. PLAN YOUR ADVENTURE PAGE
+* Call-to-action focused
+* Contact information
+* Booking consultation CTA
+* Travel Joy form embed: <script src="https://www.google.com/recaptcha/api.js?render=site-key" nonce="{NONCE}"></script> <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.6/iframeResizer.min.js"></script><iframe src="https://traveljoy.com/webforms/8E23oEyGwYC2CPMTyBPrvfDy/forms/nqbnHma8Zv2uyhQuSKoqzNRy" frameBorder="0" width="100%" height="600" id="tj-form-nqbnHma8Zv2uyhQuSKoqzNRy"></iframe><script type="text/javascript">iFrameResize({checkOrigin:false, onInit: function() { document.getElementById("tj-form-nqbnHma8Zv2uyhQuSKoqzNRy").iFrameResizer.sendMessage({ origin: document.location.origin }); }});</script>
+
+Navigation (Hamburger Menu)
+Menu Items:
+1. Home
+2. About ME
+3. Plan Your Adventure
+4. Social Media Icons (Instagram, Facebook, LinkedIn
+Behavior:
+* Slides in from right
+* Overlay with blur effect
+* Closes on selection or outside click
+* Animated hamburger icon (transforms to X)
+
+Footer
+* Logo placeholder sections (3 spots for travel industry certifications/partnerships)
+* Copyright text
+* Brand tagline
+* Consistent across all pages
+
+Key User Flows
+Primary Flow (Destination Inquiry):
+1. Land on homepage → See hero with Jess’s photo & bio
+2. Scroll to “Where is your next adventure?”
+3. Click destination pill (e.g., “Italy”)
+4. Read destination details & testimonial
+5. Click “Plan Your Adventure” CTA
+6. Navigate to contact/planning page
+Secondary Flow (Learn More):
+1. Land on homepage
+2. Open hamburger menu
+3. Navigate to “About Us”
+4. Learn about Jess’s approach
+5. Return to homepage or go to “Plan Your Adventure”
+Trust-Building Flow:
+1. Scroll through homepage
+2. Read benefit checklist
+3. View rotating testimonials
+4. See social media content
+5. Feel confident → Click destination or CTA
+
+Interactive Elements
+Animations & Transitions:
+* Destination pills: Scale up, change color on hover
+* Testimonials: Fade in/out rotation
+* Hamburger menu: Slide animation
+* CTA buttons: Lift effect with shadow enhancement
+* Social carousel: Smooth horizontal scroll
+Responsive Breakpoints:
+* Mobile: < 768px (base design)
+* Tablet: 768px - 1023px
+* Desktop: 1024px+
+
+Current Placeholders Needing Content
+1. Hero Photo: Circular profile image of Jess
+2. Hero Bio: Personalized introduction text
+3. Destination Photos: Hero images for each destination page (10 total)
+4. Testimonials: Real customer quotes and names
+5. Social Media: Actual Instagram posts/photos
+6. Footer Logos: Travel industry certification badges (IATA, CLIA, etc.)
+7. Social Links: Real URLs for Instagram, Facebook, Pinterest
+8. Contact Email: jess@jesstravelwithme.com or preferred contact method
+
+Technical Notes
+Built With:
+* Pure HTML/CSS/JavaScript (no frameworks)
+* Mobile-first responsive design
+* Single-page application architecture with dynamic page switching
+* Lightweight and fast loading
+Browser Compatibility:
+* Modern browsers (Chrome, Safari, Firefox, Edge)
+* iOS Safari optimized
+* Android Chrome optimized
+Performance:
+* Minimal dependencies
+* Optimized for mobile data
+* Smooth animations using CSS transitions
