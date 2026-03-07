@@ -4,7 +4,7 @@ import { destinations } from "@/data/destinations";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Mail, Phone, Instagram, Facebook, Star } from "lucide-react";
 import heroBg from "@/assets/images/hero-bg.jpg";
-import profileImg from "@assets/Profile_Image_1771734199142.png";
+import profileImg from "@assets/Profile_Image_1771734199142.jpg";
 
 export default function Home() {
   const testimonials = [
