@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 import profileImg from "@assets/About_Me_Photo_1771734354400.JPEG";
 import travelPhoto1 from "@assets/IMG_6469_1772402573665.jpeg";
 import travelPhoto2 from "@assets/IMG_2707_1772402573668.jpeg";
@@ -7,6 +8,13 @@ import travelPhoto3 from "@assets/IMG_9920_1772402573668.jpeg";
 import travelPhoto4 from "@assets/IMG_8561_1772402573668.jpeg";
 
 export default function About() {
+  useSEO({
+    title: "About Jessica Meincke",
+    description:
+      "Meet Jessica Meincke, your personal travel agent since 2023. Specializing in European adventures, all-inclusive resorts, Disney vacations, cruises, and more — all with complimentary planning services.",
+    canonical: "/about",
+  });
+
   const travelPhotos = [
     { img: travelPhoto1, caption: "Exploring Munich" },
     { img: travelPhoto2, caption: "Adventures in Ireland" },
@@ -38,10 +46,11 @@ export default function About() {
                   {[travelPhotos[0], travelPhotos[2]].map((photo, index) => (
                     <div key={index} className="w-full group">
                       <div className="aspect-square rounded-2xl overflow-hidden shadow-lg border-4 border-background transition-transform duration-500 group-hover:scale-[1.02] bg-gray-100 flex items-center justify-center">
-                        <img 
-                          src={photo.img} 
-                          alt={photo.caption} 
-                          className="w-full h-full object-cover" 
+                        <img
+                          src={photo.img}
+                          alt={photo.caption}
+                          loading="lazy"
+                          className="w-full h-full object-cover"
                         />
                       </div>
                       <p className="mt-2 text-center font-serif italic text-primary/70 text-sm leading-tight px-1">{photo.caption}</p>
@@ -84,10 +93,11 @@ export default function About() {
             {[travelPhotos[1], travelPhotos[2], travelPhotos[3]].map((photo, index) => (
               <div key={index} className="w-full group">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md border-4 border-background transition-transform duration-500 group-hover:scale-[1.02] bg-[#fdfaf7] flex items-center justify-center p-4">
-                  <img 
-                    src={photo.img} 
-                    alt={photo.caption} 
-                    className="max-w-[95%] max-h-[95%] w-auto h-auto object-contain" 
+                  <img
+                    src={photo.img}
+                    alt={photo.caption}
+                    loading="lazy"
+                    className="max-w-[95%] max-h-[95%] w-auto h-auto object-contain"
                   />
                 </div>
                 <p className="mt-2 text-center font-serif italic text-primary/70 text-base leading-tight px-1">{photo.caption}</p>

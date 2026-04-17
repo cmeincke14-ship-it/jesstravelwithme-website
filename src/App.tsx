@@ -1,19 +1,20 @@
-import { useState, useEffect } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/not-found";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Home from "@/pages/home";
-import Destination from "@/pages/destination";
-import About from "@/pages/about";
-import Plan from "@/pages/plan";
-import BookSupport from "@/pages/book-support";
-import Questions from "@/pages/questions";
+
+const Home = lazy(() => import("@/pages/home"));
+const Destination = lazy(() => import("@/pages/destination"));
+const About = lazy(() => import("@/pages/about"));
+const Plan = lazy(() => import("@/pages/plan"));
+const BookSupport = lazy(() => import("@/pages/book-support"));
+const Questions = lazy(() => import("@/pages/questions"));
+const NotFound = lazy(() => import("@/pages/not-found"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -25,15 +26,17 @@ function ScrollToTop() {
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/destination/:id" component={Destination} />
-      <Route path="/about" component={About} />
-      <Route path="/plan" component={Plan} />
-      <Route path="/book-support" component={BookSupport} />
-      <Route path="/questions" component={Questions} />
-      <Route component={NotFound} />
-    </Switch>
+    <Suspense fallback={<div className="min-h-screen" />}>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/destination/:id" component={Destination} />
+        <Route path="/about" component={About} />
+        <Route path="/plan" component={Plan} />
+        <Route path="/book-support" component={BookSupport} />
+        <Route path="/questions" component={Questions} />
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 

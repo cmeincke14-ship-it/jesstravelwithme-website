@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Questions() {
   const faqs = [
@@ -67,6 +68,29 @@ export default function Questions() {
       answer: "Personalized service, expert knowledge, and someone in your corner! I save you hours of research, get you insider perks and upgrades, handle all the details, and provide support if anything goes wrong. Plus, my services are free—you get professional planning at no extra cost. It's like having a travel best friend who does this for a living!"
     }
   ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs
+      .filter(f => typeof f.answer === "string")
+      .map(f => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer as string,
+        },
+      })),
+  };
+
+  useSEO({
+    title: "Common Questions",
+    description:
+      "Answers to frequently asked questions about working with personal travel agent Jessica Meincke — free planning services, booking process, travel insurance, destinations, and more.",
+    canonical: "/questions",
+    schema: faqSchema,
+  });
 
   return (
     <div className="min-h-screen pt-24 pb-20 bg-background">

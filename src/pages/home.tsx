@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { destinations } from "@/data/destinations";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Mail, Phone, Instagram, Facebook, Star } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 import heroBg from "@/assets/images/hero-bg.jpg";
 import profileImg from "@assets/Profile_Image_1771734199142.jpg";
 
@@ -29,6 +30,8 @@ export default function Home() {
       author: "HMR - Italy" 
     }
   ];
+
+  useSEO({ canonical: "/" });
 
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
@@ -236,11 +239,12 @@ export default function Home() {
           <h2 className="text-4xl font-serif font-bold text-primary mb-12 text-center">Follow my Journey</h2>
           
           <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border-4 border-white">
-            <iframe 
-              src="https://widgets.sociablekit.com/instagram-feed/iframe/25656606" 
-              frameBorder="0" 
-              width="100%" 
+            <iframe
+              src="https://widgets.sociablekit.com/instagram-feed/iframe/25656606"
+              frameBorder="0"
+              width="100%"
               height="600px"
+              loading="lazy"
               style={{ display: 'block' }}
               title="Instagram Feed"
             ></iframe>
