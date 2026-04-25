@@ -1,17 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.jesstravelwithme.com"
-        }
-      ],
-      "destination": "https://jesstravelwithme.com/:path*",
-      "permanent": true
-    },
-    {
       "source": "/destination/iceland",
       "destination": "/",
       "permanent": true
