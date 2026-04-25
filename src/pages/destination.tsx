@@ -2,13 +2,44 @@ import { useRoute, Link } from "wouter";
 import { destinations } from "@/data/destinations";
 import { ArrowLeft, Quote } from "lucide-react";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 import NotFound from "./not-found";
+
+const BASE_URL = "https://jesstravelwithme.com";
 
 export default function Destination() {
   const [, params] = useRoute("/destination/:id");
   const destId = params?.id;
-  
+
   const destination = destinations.find(d => d.id === destId);
+
+  useSEO(
+    destination
+      ? {
+          title: `${destination.name} Vacations`,
+          description: `Plan your dream ${destination.name} trip with personal travel agent Jessica Meincke. ${destination.description.slice(0, 120)}...`,
+          canonical: `/destination/${destination.id}`,
+          schema: {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: BASE_URL,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: destination.name,
+                item: `${BASE_URL}/destination/${destination.id}`,
+              },
+            ],
+          },
+        }
+      : {}
+  );
 
   if (!destination) {
     return <NotFound />;
@@ -28,9 +59,11 @@ export default function Destination() {
       {/* Hero Banner */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="relative h-[40vh] md:h-[50vh] rounded-3xl overflow-hidden shadow-xl">
-          <img 
-            src={destination.image} 
-            alt={destination.name} 
+          <img
+            src={destination.image}
+            alt={destination.name}
+            width={1200}
+            height={600}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end">
@@ -43,20 +76,20 @@ export default function Destination() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-border/50 -mt-20 relative z-10"
         >
           <h2 className="text-3xl font-serif text-primary mb-6">Discover {destination.name}</h2>
-          
+
           <div className="prose prose-lg text-muted-foreground mb-12">
             <p className="leading-relaxed text-lg">{destination.description}</p>
           </div>
 
           <div className="text-center mb-16">
             <Link href="/plan">
-              <span 
+              <span
                 data-testid={`button-plan-${destination.id}`}
                 className="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-lg cursor-pointer"
               >

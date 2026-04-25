@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { Mail, Phone, Instagram } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Plan() {
-  
+  useSEO({
+    title: "Plan Your Adventure",
+    description:
+      "Ready to travel? Fill out the planning form and personal travel agent Jessica Meincke will create a customized itinerary for your dream vacation — completely free.",
+    canonical: "/plan",
+  });
+
   // Script loading effect for the traveljoy embed
   useEffect(() => {
     // Note: In a real React app, embedding third-party scripts that inject iframes

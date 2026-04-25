@@ -10,6 +10,11 @@
       ],
       "destination": "https://jesstravelwithme.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/destination/iceland",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [
