@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
 export default function BookSupport() {
@@ -38,11 +37,7 @@ export default function BookSupport() {
   return (
     <div className="min-h-screen pt-24 pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <div>
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-8 text-center">
             Interested in Self-Book Options?
           </h1>
@@ -65,15 +60,12 @@ export default function BookSupport() {
           </div>
 
           <div className="space-y-4">
-            {links.map((link, idx) => (
-              <motion.a
+            {links.map((link) => (
+              <a
                 key={link.title}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.1 }}
                 className="group flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
               >
                 <div className="flex items-center gap-4">
@@ -90,10 +82,10 @@ export default function BookSupport() {
                 <div className="flex items-center gap-2 text-accent font-semibold group-hover:translate-x-1 transition-transform">
                   Book Now <ExternalLink size={18} />
                 </div>
-              </motion.a>
+              </a>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

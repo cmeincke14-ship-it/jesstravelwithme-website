@@ -1,7 +1,6 @@
 import { useRoute, Link } from "wouter";
 import { destinations } from "@/data/destinations";
 import { ArrowLeft, Quote } from "lucide-react";
-import { motion } from "framer-motion";
 import { useSEO } from "@/hooks/useSEO";
 import NotFound from "./not-found";
 
@@ -76,11 +75,7 @@ export default function Destination() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-border/50 -mt-20 relative z-10"
-        >
+        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-border/50 -mt-20 relative z-10">
           <h2 className="text-3xl font-serif text-primary mb-6">Discover {destination.name}</h2>
 
           <div className="prose prose-lg text-muted-foreground mb-12">
@@ -106,7 +101,7 @@ export default function Destination() {
               <p className="text-sm font-medium uppercase tracking-wider text-accent">— {destination.testimonial.author}</p>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

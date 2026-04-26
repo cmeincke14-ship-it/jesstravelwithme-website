@@ -95,14 +95,10 @@ export default function Questions() {
   return (
     <div className="min-h-screen pt-24 pb-20 bg-background">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Common Questions</h1>
           <p className="text-xl text-muted-foreground">Everything you need to know about working with me as your personal travel agent.</p>
-        </motion.div>
+        </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (

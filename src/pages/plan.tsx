@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { Mail, Phone, Instagram } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
@@ -20,10 +19,7 @@ export default function Plan() {
   return (
     <div className="min-h-screen pt-32 pb-20 bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
+        <div>
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">Plan Your Adventure</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -53,7 +49,7 @@ export default function Plan() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

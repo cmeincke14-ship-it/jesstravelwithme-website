@@ -72,12 +72,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 text-center md:text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl"
-          >
+          <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 leading-tight">
               There will always be a reason to wait. <br />
               <span className="text-accent italic">There won't always be the same opportunity to go!</span>
@@ -106,7 +101,7 @@ export default function Home() {
                 </span>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

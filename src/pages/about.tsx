@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useSEO } from "@/hooks/useSEO";
 import profileImg from "@assets/About_Me_Photo_1771734354400.JPEG";
@@ -25,10 +24,7 @@ export default function About() {
   return (
     <div className="min-h-screen pt-32 pb-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
+        <div>
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Hi I'm Jessica!</h1>
             <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
@@ -104,7 +100,7 @@ export default function About() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
