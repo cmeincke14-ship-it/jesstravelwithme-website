@@ -4,7 +4,7 @@ import { destinations } from "@/data/destinations";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Mail, Phone, Instagram, Facebook, Star } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
-import heroBg from "@/assets/images/hero-bg.jpg";
+const heroBg = "/hero-bg.jpg";
 import profileImg from "@assets/Profile_Image_1771734199142.jpg";
 
 export default function Home() {
@@ -63,9 +63,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-[70vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroBg} 
-            alt="Beautiful tropical sunset" 
+          <img
+            src={heroBg}
+            alt="Beautiful tropical sunset"
+            fetchPriority="high"
             className="w-full h-full object-cover object-center opacity-40 mix-blend-multiply"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/60 to-background"></div>
@@ -112,7 +113,7 @@ export default function Home() {
             <div className="w-full lg:w-4/12 flex justify-center">
               <div className="bg-white p-2 pb-10 shadow-xl border border-gray-100 transform -rotate-3 w-full max-w-sm">
                 <div className="aspect-[4/5] overflow-hidden bg-gray-100">
-                  <img src={profileImg} alt="Jess" className="w-full h-full object-cover" />
+                  <img src={profileImg} alt="Jess" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </div>
                 <p className="mt-3 text-center font-serif italic font-bold text-lg text-primary">Hi I'm Jessica</p>
               </div>
