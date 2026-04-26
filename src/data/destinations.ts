@@ -5,10 +5,10 @@ import heroPortugal from '@/assets/images/dest-portugal.jpg';
 import heroGermany from '@/assets/images/dest-germany.jpg';
 import heroIceland from '@/assets/images/dest-iceland.jpg';
 import heroMexico from '@/assets/images/dest-mexico.jpg';
-import heroDisney from '@assets/Disney_Example_1772400762415.jpeg';
+import heroDisney from '@assets/Disney_Example_1772400762415.webp';
 import heroAllInclusive from '@/assets/images/dest-all-inclusive.jpg';
-import heroCruise from '@assets/cruises_example_1772400762415.jpeg';
-import heroRiverCruise from '@assets/river_cruise_1772400844816.jpg';
+import heroCruise from '@assets/cruises_example_1772400762415.webp';
+import heroRiverCruise from '@assets/river_cruise_1772400844816.webp';
 
 export interface Destination {
   id: string;

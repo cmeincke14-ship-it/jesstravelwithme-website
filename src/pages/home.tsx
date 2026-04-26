@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, Mail, Phone, Instagram, Facebook, Star } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 const heroBg = "/hero-bg.jpg";
-import profileImg from "@assets/Profile_Image_1771734199142.jpg";
+import profileImg from "@assets/Profile_Image_1771734199142.webp";
 
 export default function Home() {
   const testimonials = [

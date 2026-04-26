@@ -1,10 +1,10 @@
 import { Link } from "wouter";
 import { useSEO } from "@/hooks/useSEO";
-import profileImg from "@assets/About_Me_Photo_1771734354400.JPEG";
-import travelPhoto1 from "@assets/IMG_6469_1772402573665.jpeg";
-import travelPhoto2 from "@assets/IMG_2707_1772402573668.jpeg";
-import travelPhoto3 from "@assets/IMG_9920_1772402573668.jpeg";
-import travelPhoto4 from "@assets/IMG_8561_1772402573668.jpeg";
+import profileImg from "@assets/About_Me_Photo_1771734354400.webp";
+import travelPhoto1 from "@assets/IMG_6469_1772402573665.webp";
+import travelPhoto2 from "@assets/IMG_2707_1772402573668.webp";
+import travelPhoto3 from "@assets/IMG_9920_1772402573668.webp";
+import travelPhoto4 from "@assets/IMG_8561_1772402573668.webp";
 
 export default function About() {
   useSEO({

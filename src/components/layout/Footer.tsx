@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import tmLogo from "@assets/TM_Logo_Suitcase_Left_Side_with_Bleed_1771735877681.avif";
+import tmLogo from "@assets/TM_Logo_Suitcase_Left_Side_with_Bleed_1771735877681.webp";
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
