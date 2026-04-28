@@ -46,10 +46,15 @@ export function useSEO({
     setMeta('meta[name="twitter:url"]', canonicalUrl);
     setMeta('meta[name="twitter:image"]', ogImage);
 
-    const canonicalEl = document.querySelector(
+    let canonicalEl = document.querySelector(
       'link[rel="canonical"]'
     ) as HTMLLinkElement | null;
-    if (canonicalEl) canonicalEl.href = canonicalUrl;
+    if (!canonicalEl) {
+      canonicalEl = document.createElement("link");
+      canonicalEl.rel = "canonical";
+      document.head.appendChild(canonicalEl);
+    }
+    canonicalEl.href = canonicalUrl;
 
     const schemaId = "page-schema";
     let schemaEl = document.getElementById(schemaId);
