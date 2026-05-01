@@ -3,7 +3,8 @@ import { Link } from "wouter";
 import { destinations } from "@/data/destinations";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Mail, Phone, Instagram, Facebook, Star } from "lucide-react";
-import heroBg from "@/assets/images/hero-bg.jpg";
+import { useSEO } from "@/hooks/useSEO";
+const heroBg = "/hero-bg.webp";
 import profileImg from "@assets/Profile_Image_1771734199142.jpg";
 
 export default function Home() {
@@ -29,6 +30,8 @@ export default function Home() {
       author: "HMR - Italy" 
     }
   ];
+
+  useSEO({ canonical: "/" });
 
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
@@ -60,21 +63,17 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-[70vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroBg} 
-            alt="Beautiful tropical sunset" 
+          <img
+            src={heroBg}
+            alt="Beautiful tropical sunset"
+            fetchPriority="high"
             className="w-full h-full object-cover object-center opacity-40 mix-blend-multiply"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/60 to-background"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 text-center md:text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl"
-          >
+          <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 leading-tight">
               There will always be a reason to wait. <br />
               <span className="text-accent italic">There won't always be the same opportunity to go!</span>
@@ -103,7 +102,7 @@ export default function Home() {
                 </span>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -114,7 +113,7 @@ export default function Home() {
             <div className="w-full lg:w-4/12 flex justify-center">
               <div className="bg-white p-2 pb-10 shadow-xl border border-gray-100 transform -rotate-3 w-full max-w-sm">
                 <div className="aspect-[4/5] overflow-hidden bg-gray-100">
-                  <img src={profileImg} alt="Jess" className="w-full h-full object-cover" />
+                  <img src={profileImg} alt="Jess" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </div>
                 <p className="mt-3 text-center font-serif italic font-bold text-lg text-primary">Hi I'm Jessica</p>
               </div>
@@ -236,11 +235,12 @@ export default function Home() {
           <h2 className="text-4xl font-serif font-bold text-primary mb-12 text-center">Follow my Journey</h2>
           
           <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-xl border-4 border-white">
-            <iframe 
-              src="https://widgets.sociablekit.com/instagram-feed/iframe/25656606" 
-              frameBorder="0" 
-              width="100%" 
+            <iframe
+              src="https://widgets.sociablekit.com/instagram-feed/iframe/25656606"
+              frameBorder="0"
+              width="100%"
               height="600px"
+              loading="lazy"
               style={{ display: 'block' }}
               title="Instagram Feed"
             ></iframe>

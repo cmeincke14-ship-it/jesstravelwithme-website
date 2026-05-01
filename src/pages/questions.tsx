@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Questions() {
   const faqs = [
@@ -68,17 +69,36 @@ export default function Questions() {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs
+      .filter(f => typeof f.answer === "string")
+      .map(f => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer as string,
+        },
+      })),
+  };
+
+  useSEO({
+    title: "Common Questions",
+    description:
+      "Answers to frequently asked questions about working with personal travel agent Jessica Meincke — free planning services, booking process, travel insurance, destinations, and more.",
+    canonical: "/questions",
+    schema: faqSchema,
+  });
+
   return (
     <div className="min-h-screen pt-24 pb-20 bg-background">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Common Questions</h1>
           <p className="text-xl text-muted-foreground">Everything you need to know about working with me as your personal travel agent.</p>
-        </motion.div>
+        </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
